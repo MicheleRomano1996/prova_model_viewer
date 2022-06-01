@@ -1,4 +1,4 @@
-<!doctype html>
+<!-- <!doctype html>
 <html>
 
 <head>
@@ -26,18 +26,69 @@
 </body>
 
 </html>
+ -->
 
 
 
 
-<!-- <model-viewer 
-ar 
-ar-modes="webxr scene-viewer quick-look" 
-camera-controls 
-src="../../shared-assets/models/Astronaut.glb" 
-alt="A 3D model of an astronaut">
 
-  <button slot="ar-button" style="background-color: white; border-radius: 4px; border: none; position: absolute; top: 16px; right: 16px; ">
-      👋 Activate AR
+
+<!-- nuovo codice da provare -->
+
+
+
+<!doctype html>
+<html>
+
+<head>
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<style>
+	model-viewer{
+		width: 600px;
+		height: 600px;
+		margin: 0 auto;
+	}
+</style>
+</head>
+
+<body>
+	<model-viewer 
+	src="assets/Persian.glb" 
+	shadow-intensity="1"
+	auto-rotate
+	camera-controls 
+	enable-pan
+	alt="A 3D model carousel">
+
+
+<button slot="ar-button" id="ar-button">
+    View in your space
   </button>
-</model-viewer> -->
+
+  <div id="ar-prompt">
+    <img src="assets/hand.png">
+  </div>
+
+  <button id="ar-failure">
+    AR is not tracking!
+  </button>
+
+  <div class="slider">
+    <div class="slides">
+
+      <button class="slide selected" onclick="switchSrc(this, 'Persian')" style="background-image: url('assets/Persian.png');">
+
+      </button><button class="slide" onclick="switchSrc(this, 'Tablet')" style="background-image: url('assets/Tablet.png');">
+
+      </button><button class="slide" onclick="switchSrc(this, 'Toy_chica')" style="background-image: url('toy_chica.png');">
+       
+    </button></div>
+  </div>
+
+</model-viewer>
+
+
+
+</body>
+
+</html>
